@@ -3,14 +3,14 @@ resource "aws_instance" "terraform-demo" {
   instance_type = "t3.micro"
    ##  default vpc
   tags = {
-    Name = "terraform-demo"
+    Name = "terraform-demo-dynamic"
     project= "roboshop"
     environemnt= "dev"
   }
 }
 
 resource "aws_security_group" "terraform-demo" {
-  name        = "terraform-demo-1"
+  name        = "terraform-demo-dynamic"
   description = "Allow TLS inbound traffic and all outbound traffic"
 
 ## outbound traffic
@@ -54,7 +54,7 @@ dynamic "ingress" {
 }
 ## lebels meta data etc...
   tags = {
-    Name = "terraform-demo-1"
+    Name = "terraform-demo-dynamic"
     project= "roboshop"
     environemnt= "dev"
   }
