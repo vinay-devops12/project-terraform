@@ -1,0 +1,21 @@
+
+variable ingress_rule {
+    default ={
+          ssh = {
+            port = 22
+            cidr_blocks = ["0.0.0.0/0"] 
+           }
+
+          http = {
+            port = 80
+             cidr_blocks = ["0.0.0.0/0"] 
+           }
+
+       mysql = {
+       port = 80
+      cidr_blocks = ["0.0.0.0/0"]
+        }
+
+     }
+  }
+  
